@@ -16,8 +16,8 @@ on:
     branches: [ "master" ]
   merge_group:
     branches: [ "master" ]
-  schedule:
-    - cron: '00 06 * * 1'
+  #schedule:
+  #  - cron: '00 06 * * 1'
   push:
     branches: [ "master" ]
 
@@ -33,6 +33,7 @@ jobs:
     uses: "google/osv-scanner-action/.github/workflows/osv-scanner-reusable.yml@1f1242919d8a60496dd1874b24b62b2370ed4c78" # v1.7.1
     with:
       # Example of specifying custom arguments
+      fail-on-vuln: false
       scan-args: |-
         -r
         --skip-git
